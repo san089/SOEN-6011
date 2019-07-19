@@ -140,42 +140,42 @@ where y is a real number.
 	
 	\item \textbf{ID } \hspace{3cm} :FR1  \\
 	\textbf{TYPE } \hspace{2.27cm}  :Functional\\
-	\textbf{PRIORITY } \hspace{1.15cm} :1 \\
+	\textbf{OWNER } \hspace{1.75cm} :Sanchit \\
 	\textbf{DESCRIPTION }\hspace{0.35cm} :System should prompt the user to enter the value of x and y. \\
 	\textbf{RATIONALE } \hspace{0.75cm} :In order to get user input and start calculation. \\
 	
 	
 	\item \textbf{ID } \hspace{3cm} :FR2  \\
 	\textbf{TYPE } \hspace{2.27cm}  :Functional\\
-	\textbf{PRIORITY } \hspace{1.15cm} :1 \\
+	\textbf{OWNER } \hspace{1.75cm} :Sanchit \\
 	\textbf{DESCRIPTION }\hspace{0.35cm} :System should display an error message when value entered by user is not a number. \\
 	\textbf{RATIONALE } \hspace{0.75cm} :For calculations, input should be numbers only.  \\
 	
 	
 	\item \textbf{ID } \hspace{3cm} :FR3  \\
 	\textbf{TYPE } \hspace{2.27cm}  :Functional\\
-	\textbf{PRIORITY } \hspace{1.15cm} :2 \\
+	\textbf{OWNER } \hspace{1.75cm} :Sanchit \\
 	\textbf{DESCRIPTION }\hspace{0.35cm} :In case the input entered is not valid system should prompt the user to input values again. \\
 	\textbf{RATIONALE } \hspace{0.75cm} :User should have the flexiblity to do calculations without exiting the program.  \\
 	
 	
 	\item \textbf{ID } \hspace{3cm} :FR4  \\
 	\textbf{TYPE } \hspace{2.27cm}  :Functional\\
-	\textbf{PRIORITY } \hspace{1.15cm} :2 \\
+	\textbf{OWNER } \hspace{1.75cm} :Sanchit \\
 	\textbf{DESCRIPTION }\hspace{0.35cm} :User should have the option to exit the program anytime during the use. \\
 	\textbf{RATIONALE } \hspace{0.75cm} :If user is done with the use of program.  \\
 	
 	
 	\item \textbf{ID } \hspace{3cm} :FR5  \\
 	\textbf{TYPE } \hspace{2.27cm}  :Functional\\
-	\textbf{PRIORITY } \hspace{1.15cm} :1 \\
+	\textbf{OWNER } \hspace{1.75cm} :Sanchit \\
 	\textbf{DESCRIPTION }\hspace{0.35cm} :System should display an error message when user enter value of x and y both as 0. \\
 	\textbf{RATIONALE } \hspace{0.75cm} :0 raised to the power 0 is undefined.  \\
 	
 	
 	\item \textbf{ID } \hspace{3cm} :FR6  \\
 	\textbf{TYPE } \hspace{2.27cm}  :Functional\\
-	\textbf{PRIORITY } \hspace{1.15cm} :1 \\
+	\textbf{OWNER } \hspace{1.75cm} :Sanchit \\
 	\textbf{DESCRIPTION }\hspace{0.35cm} :System should display an error message when user enter value of x as 0 and y as a negative number. \\
 	\textbf{RATIONALE } \hspace{0.75cm} :0 raised to the power of a negative number is undefined.  \\
 	
@@ -189,28 +189,28 @@ where y is a real number.
 	
 	\item \textbf{ID } \hspace{3cm} :NFR1  \\
 	\textbf{TYPE } \hspace{2.27cm}  :Non-Functional\\
-	\textbf{PRIORITY } \hspace{1.15cm} :3 \\
+	\textbf{OWNER } \hspace{1.75cm} :Sanchit \\
 	\textbf{DESCRIPTION }\hspace{0.35cm} :The error message displayed should be appropriate and helpful for the user. \\
 	\textbf{RATIONALE } \hspace{0.75cm} :User should be able to know what went wrong.  \\
 	
 	
 	\item \textbf{ID } \hspace{3cm} :NFR2  \\
 	\textbf{TYPE } \hspace{2.27cm}  :Non-Functional\\
-	\textbf{PRIORITY } \hspace{1.15cm} :3 \\
+	\textbf{OWNER } \hspace{1.75cm} :Sanchit \\
 	\textbf{DESCRIPTION }\hspace{0.35cm} :The text-based interface should be user friendly. \\
 	\textbf{RATIONALE } \hspace{0.75cm} :It should be easy for the user to use the system.  \\
 	
 	
 	\item \textbf{ID } \hspace{3cm} :NFR3  \\
 	\textbf{TYPE } \hspace{2.27cm}  :Non-Functional\\
-	\textbf{PRIORITY } \hspace{1.15cm} :2 \\
+	\textbf{OWNER } \hspace{1.75cm} :Sanchit \\
 	\textbf{DESCRIPTION }\hspace{0.35cm} :The result displayed should be as accurate as possible. \\
 	\textbf{RATIONALE } \hspace{0.75cm} :Incorrect output should not be displayed.   \\
 	
 	
 	\item \textbf{ID } \hspace{3cm} :NFR4  \\
 	\textbf{TYPE } \hspace{2.27cm}  :Non-Functional\\
-	\textbf{PRIORITY } \hspace{1.15cm} :3 \\
+	\textbf{OWNER } \hspace{1.75cm} :Sanchit \\
 	\textbf{DESCRIPTION }\hspace{0.35cm} :Calculation time should be less than 1 second. \\
 	\textbf{RATIONALE } \hspace{0.75cm} :Waiting a long time for the output might not be desirable for the user.  \\
 	
@@ -273,7 +273,7 @@ where y is a real number.
 	6. $\hspace{2em}$Set COUNTER to 0\\
 	7. $\hspace{3em}$WHILE COUNTER $\neq$ y \\
 	8. $\hspace{4em}$ UPDATE RESULT TO RESULT * x\\
-	9. 	PRINT TEMP2 \\
+	9. 	PRINT RESULT \\
 	10. READ new value for x and y\\
 	11. REPEAT the algorithm for new value \\
 	end
@@ -291,6 +291,41 @@ where y is a real number.
 	end
 	\caption{verifyInputIsRealNumber(x,y)}
 \end{algorithm}
+
+
+
+
+\subsection{Algorithm 1}
+\begin{algorithm}[H]
+	begin: \\
+	1. verifyInputIsRealNumber(x,y)\\
+	2. IF x is 0 AND y $\leq$ 0 THEN \\
+	3. $\hspace{2em}$RAISE EXCEPTION	\\
+	4. ELSE \\
+	5. $\hspace{2em}$Set RESULT to 1 \\
+	6. $\hspace{2em}$Set COUNTER to 0\\
+	7. $\hspace{3em}$WHILE COUNTER $\neq$ y \\
+	8. $\hspace{4em}$ UPDATE RESULT TO RESULT * x\\
+	9. 	PRINT RESULT \\
+	10. READ new value for x and y\\
+	11. REPEAT the algorithm for new value \\
+	end
+	\caption{Power-Function (x,y (input set))}
+\end{algorithm}
+
+\vspace{0.5cm}
+
+\begin{algorithm}
+	begin:\\
+	1.IF  x,y $\in -\infty$  to  +$\infty$ \\
+	2. $\hspace{2em}$ continue with processing\\
+	3. else\\
+	4. $\hspace{2em}$ print error and take new input \\
+	end
+	\caption{verifyInputIsRealNumber(x,y)}
+\end{algorithm}
+
+
 
 
 \begin{enumerate}
