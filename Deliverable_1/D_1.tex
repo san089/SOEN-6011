@@ -1,0 +1,284 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=0.75in,right=0.75in,top=1.5in,bottom=1.5in,footskip=.25in]{geometry}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{longtable}
+\usepackage{url}
+
+\newcommand{\Author}{Sanchit Kumar(40081187)}
+\newcommand{\ProjectName}{Function 9: Power Function}
+\newcommand{\Title}{}
+\newcommand{\Course}{\textbf{SOEN-6011 \\ Software Engineering Processes}}
+\newcommand{\ProfessorName}{Dr. PANKAJ KAMTHAN}
+
+\graphicspath{{D:/SOEN 6011/SOEN-6011/Deliverable_1}}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE START
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} %New command for thickness of line	
+
+
+\centering
+\textsc{\LARGE Concordia University} \\ [5mm] 
+\includegraphics[scale=.1]{University_logo.jpg}\\[1cm] 
+\textsc{\Large \Course} \\ [0.5cm]
+
+%--------
+%	TITLE
+%--------
+	
+\HRule \\[0.4cm]
+{ \huge \bfseries SCIENTIFIC CALCULATOR \\ [5mm]  \ProjectName}\\[0.4cm] 
+{\large \textbf{DELIVERABLE 1 (D1)} }	
+\HRule \\[1.5cm]
+
+
+%---------
+%	TAIL SECTION
+%---------
+\vspace{5cm}
+\Large \emph{\textbf{Author: \Author}}\\
+{\large \today}\\[2cm]
+
+\vfill
+\end{titlepage}	
+
+
+
+
+
+\newpage
+%----------------------------------------------------------------------------------------
+%	NEW PAGE START
+%----------------------------------------------------------------------------------------
+
+\section{\large Function 9 : Power Function}
+
+\subsection{Description}
+A power function is of the form:
+\begin{equation} \label{Power_func}
+f(x) = x^y
+\end{equation}
+where y is a real number.
+
+
+\subsection{Domain}
+\begin{enumerate}
+	\item When y is a non-negative integer, the domain is all real numbers:  (- $\infty$,$\infty$)
+	
+	\item When y is a negative integer, the domain is all real numbers excluding zero ( (- $\infty$, 0) $\cup$ (0,$\infty$) )
+	
+	\item When y is a irrational number and y \textgreater \space 0, the domain is all non-negative real numbers.
+	
+	\item When y is a irrational number and y \textless \space 0, the domain is all positive real numbers. 
+\end{enumerate}
+
+
+\subsection{Characteristics of Power Function.}
+\begin{enumerate}
+	\item The behaviour of power function depends on whether the y is a positive or a negative number.
+	\item The behaviour of power function depends on whether the y is even or odd.
+	\item Also, the power function behaves differently for fractional powers and specifically for negative or positive fractional powers.
+\end{enumerate}
+
+
+%----------------------------------------------------------------------------------------
+%	Requirement Specifications
+%----------------------------------------------------------------------------------------
+
+
+\section{Requirements Specification}
+\subsection{Definitions and abbrevations}
+
+
+\begin{table}[htp]
+	\centering
+	\caption{Definitions and abbreviations.} \vspace{0.5cm} \label{tab:definition_table} 
+	\begin{tabular}{||c|c||}
+		\hline  \hline \textbf{Terms} & \textbf{Definition} \\
+		\hline \hline
+		FR & Funtional Requirement  \\ 
+		\hline
+		NFR & Non-Functional Requirement  \\
+		\hline
+		User & Someone who interacts with the system. \\
+		\hline
+		System & Software Program for calculation of Power Function. \\
+		\hline \hline 
+	\end{tabular}
+\end{table}
+
+
+
+\subsection{Constraints and Assumptions}
+\begin{enumerate}
+	\item User should provide input for both "x" and "y". No default values to be used.
+	\item Based on function characteristics, value of "x" and "y" should be a real number.
+	\item If input value for "x" is less than 0, then "y" is a whole number.
+	\item The output is contrained by Hardware. 
+	\item The maximum value program could calculate is 3.40282346638528860e+38.
+	\item The minimum value program could calculate is -3.40282346638528860e+38.
+\end{enumerate}
+
+
+
+
+
+
+
+
+\section{Requirememts}
+
+\subsection{Functional Requirements}
+\begin{itemize}
+	
+	\item \textbf{ID } \hspace{3cm} :FR1  \\
+	\textbf{TYPE } \hspace{2.27cm}  :Functional\\
+	\textbf{PRIORITY } \hspace{1.15cm} :1 \\
+	\textbf{DESCRIPTION }\hspace{0.35cm} :System should prompt the user to enter the value of x and y. \\
+	\textbf{RATIONALE } \hspace{0.75cm} :In order to get user input and start calculation. \\
+	
+	
+	\item \textbf{ID } \hspace{3cm} :FR2  \\
+	\textbf{TYPE } \hspace{2.27cm}  :Functional\\
+	\textbf{PRIORITY } \hspace{1.15cm} :1 \\
+	\textbf{DESCRIPTION }\hspace{0.35cm} :System should display an error message when value entered by user is not a number. \\
+	\textbf{RATIONALE } \hspace{0.75cm} :For calculations, input should be numbers only.  \\
+	
+	
+	\item \textbf{ID } \hspace{3cm} :FR3  \\
+	\textbf{TYPE } \hspace{2.27cm}  :Functional\\
+	\textbf{PRIORITY } \hspace{1.15cm} :2 \\
+	\textbf{DESCRIPTION }\hspace{0.35cm} :In case the input entered is not valid system should prompt the user to input values again. \\
+	\textbf{RATIONALE } \hspace{0.75cm} :User should have the flexiblity to do calculations without exiting the program.  \\
+	
+	
+	\item \textbf{ID } \hspace{3cm} :FR4  \\
+	\textbf{TYPE } \hspace{2.27cm}  :Functional\\
+	\textbf{PRIORITY } \hspace{1.15cm} :2 \\
+	\textbf{DESCRIPTION }\hspace{0.35cm} :User should have the option to exit the program anytime during the use. \\
+	\textbf{RATIONALE } \hspace{0.75cm} :If user is done with the use of program.  \\
+	
+	
+	\item \textbf{ID } \hspace{3cm} :FR5  \\
+	\textbf{TYPE } \hspace{2.27cm}  :Functional\\
+	\textbf{PRIORITY } \hspace{1.15cm} :1 \\
+	\textbf{DESCRIPTION }\hspace{0.35cm} :System should display an error message when user enter value of x and y both as 0. \\
+	\textbf{RATIONALE } \hspace{0.75cm} :0 raised to the power 0 is undefined.  \\
+	
+	
+	\item \textbf{ID } \hspace{3cm} :FR6  \\
+	\textbf{TYPE } \hspace{2.27cm}  :Functional\\
+	\textbf{PRIORITY } \hspace{1.15cm} :1 \\
+	\textbf{DESCRIPTION }\hspace{0.35cm} :System should display an error message when user enter value of x as 0 and y as a negative number. \\
+	\textbf{RATIONALE } \hspace{0.75cm} :0 raised to the power of a negative number is undefined.  \\
+	
+
+\end{itemize}
+
+
+
+\subsection{Non-Functional Requirements}
+\begin{itemize}
+	
+	\item \textbf{ID } \hspace{3cm} :NFR1  \\
+	\textbf{TYPE } \hspace{2.27cm}  :Non-Functional\\
+	\textbf{PRIORITY } \hspace{1.15cm} :3 \\
+	\textbf{DESCRIPTION }\hspace{0.35cm} :The error message displayed should be appropriate and helpful for the user. \\
+	\textbf{RATIONALE } \hspace{0.75cm} :User should be able to know what went wrong.  \\
+	
+	
+	\item \textbf{ID } \hspace{3cm} :NFR2  \\
+	\textbf{TYPE } \hspace{2.27cm}  :Non-Functional\\
+	\textbf{PRIORITY } \hspace{1.15cm} :3 \\
+	\textbf{DESCRIPTION }\hspace{0.35cm} :The text-based interface should be user friendly. \\
+	\textbf{RATIONALE } \hspace{0.75cm} :It should be easy for the user to use the system.  \\
+	
+	
+	\item \textbf{ID } \hspace{3cm} :NFR3  \\
+	\textbf{TYPE } \hspace{2.27cm}  :Non-Functional\\
+	\textbf{PRIORITY } \hspace{1.15cm} :2 \\
+	\textbf{DESCRIPTION }\hspace{0.35cm} :The result displayed should be as accurate as possible. \\
+	\textbf{RATIONALE } \hspace{0.75cm} :Incorrect output should not be displayed.   \\
+	
+	
+	\item \textbf{ID } \hspace{3cm} :NFR4  \\
+	\textbf{TYPE } \hspace{2.27cm}  :Non-Functional\\
+	\textbf{PRIORITY } \hspace{1.15cm} :3 \\
+	\textbf{DESCRIPTION }\hspace{0.35cm} :Calculation time should be less than 1 second. \\
+	\textbf{RATIONALE } \hspace{0.75cm} :Waiting a long time for the output might not be desirable for the user.  \\
+	
+	
+\end{itemize}
+
+
+\subsection{Difficulty and Prioritization}
+
+%----------------------------------------------------------------------
+%               Difficulty and Priority Table
+%----------------------------------------------------------------------
+
+\begin{table}[htp]
+	\centering
+	\caption{Difficulty and Prioritization} \vspace{0.5cm} \label{tab:difficulty_table} 
+	\begin{tabular}{||c|c|c||}
+		\hline  \hline \textbf{Requirement ID} & \textbf{Priority} & \textbf{Difficulty} \\
+		\hline \hline
+		FR1 & High & Easy \\ 
+		\hline
+		FR2 & High & Easy \\ 
+		\hline
+		FR3 & Normal & Easy  \\ 
+		\hline
+		FR4 & Normal & Normal \\ 
+		\hline
+		FR5 & High & Easy  \\ 
+		\hline
+		FR6 & High & Normal \\ 
+		\hline
+		NFR1 & Low & Easy  \\ 
+		\hline
+		NFR2 & Low & Normal  \\ 
+		\hline
+		NFR3 & Normal & Difficult  \\ 
+		\hline
+		NFR4 & Low & Normal  \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+%----------------------------------------------------------------------------------------
+%	Psudo Code
+%----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{thebibliography}{3}
+	
+	\bibitem{1} \emph{“Power Functions Algebraic Representation”} \url{http://wmueller.com/precalculus/families/1\textunderscore41.html} 
+	
+	\bibitem{2} \emph{"Power Functions"} \url{http://www.biology.arizona.edu/biomath/tutorials/Power/Powerbasics.html}
+	
+\end{thebibliography}
+
+%-------------------------------PAGE END-------------------------------------------------------------------------------------------------------------
+
+\end{document}
