@@ -3,13 +3,13 @@
 \usepackage{graphicx}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
-\usepackage{longtable}
 \usepackage{url}
+\usepackage[ruled]{algorithm2e}
 
 \newcommand{\Author}{Sanchit Kumar(40081187)}
 \newcommand{\ProjectName}{Function 9: Power Function}
 \newcommand{\Title}{}
-\newcommand{\Course}{\textbf{SOEN-6011 \\ Software Engineering Processes}}
+\newcommand{\Course}{\textbf{SOEN-6011 \vspace{0.5cm} Software Engineering Processes}}
 \newcommand{\ProfessorName}{Dr. PANKAJ KAMTHAN}
 
 \graphicspath{{D:/SOEN 6011/SOEN-6011/Deliverable_1}}
@@ -260,16 +260,49 @@ where y is a real number.
 %----------------------------------------------------------------------------------------
 
 
+\section{PSEUDOCODE}
+
+\subsection{Algorithm 1}
+\begin{algorithm}[H]
+	begin: \\
+	1. verifyInputIsRealNumber(x,y)\\
+	2. IF x is 0 AND y $\leq$ 0 THEN \\
+	3. $\hspace{2em}$RAISE EXCEPTION	\\
+	4. ELSE \\
+	5. $\hspace{2em}$Set RESULT to 1 \\
+	6. $\hspace{2em}$Set COUNTER to 0\\
+	7. $\hspace{3em}$WHILE COUNTER $\neq$ y \\
+	8. $\hspace{4em}$ UPDATE RESULT TO RESULT * x\\
+	9. 	PRINT TEMP2 \\
+	10. READ new value for x and y\\
+	11. REPEAT the algorithm for new value \\
+	end
+	\caption{Power-Function (x,y (input set))}
+\end{algorithm}
+
+\vspace{1cm}
+
+\begin{algorithm}
+	begin:\\
+	1.IF  x,y $\in -\infty$  to  +$\infty$ \\
+	2. $\hspace{2em}$ continue with processing\\
+	3. else\\
+	4. $\hspace{2em}$ print error and take new input \\
+	end
+	\caption{verifyInputIsRealNumber(x,y)}
+\end{algorithm}
 
 
+\begin{enumerate}
+	\item For Input : use READ
+	\item For output : use PRINT
+	\item For calculation : use COMPUTE
+	\item For Initialize: use SET 
+	\item For Add one: use INCREMENT 
+\end{enumerate}
 
 
-
-
-
-
-
-
+\vspace{2cm}
 
 \begin{thebibliography}{3}
 	

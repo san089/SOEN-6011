@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.8)  18 JUL 2019 21:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.8)  19 JUL 2019 00:16
 entering extended mode
 **./D_1.tex
 (D_1.tex
@@ -144,29 +144,70 @@ File: uni-global.def 2013/05/13 UCS: Unicode global data
 \uc@combtoksb=\toks19
 \uc@temptokena=\toks20
 )
-("C:\Users\Sanchit Kumar\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\long
-table.sty"
-Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
-\LTleft=\skip43
-\LTright=\skip44
-\LTpre=\skip45
-\LTpost=\skip46
-\LTchunksize=\count94
-\LTcapwidth=\dimen114
-\LT@head=\box27
-\LT@firsthead=\box28
-\LT@foot=\box29
-\LT@lastfoot=\box30
-\LT@cols=\count95
-\LT@rows=\count96
-\c@LT@tables=\count97
-\c@LT@chunks=\count98
-\LT@p@ftn=\toks21
-)
 ("C:\Users\Sanchit Kumar\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.st
 y"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Users\Sanchit Kumar\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithm2
+e\algorithm2e.sty"
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count94
+
+("C:\Users\Sanchit Kumar\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthe
+n.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip43
+
+("C:\Users\Sanchit Kumar\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\
+ifoddpage.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count95
+)
+("C:\Users\Sanchit Kumar\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\xspa
+ce.sty"
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+("C:\Users\Sanchit Kumar\AppData\Local\Programs\MiKTeX 2.9\tex/latex/relsize\re
+lsize.sty"
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip44
+\skiplinenumber=\skip45
+\skiprule=\skip46
+\skiphlne=\skip47
+\skiptext=\skip48
+\skiplength=\skip49
+\algomargin=\skip50
+\skipalgocfslide=\skip51
+\algowidth=\dimen114
+\inoutsize=\dimen115
+\inoutindent=\dimen116
+\interspacetitleruled=\dimen117
+\interspacealgoruled=\dimen118
+\interspacetitleboxruled=\dimen119
+\algocf@ruledwidth=\skip52
+\algocf@inoutbox=\box27
+\algocf@inputbox=\box28
+\AlCapSkip=\skip53
+\AlCapHSkip=\skip54
+\algoskipindent=\skip55
+\algocf@nlbox=\box29
+\algocf@hangingbox=\box30
+\algocf@untilbox=\box31
+\algocf@skipuntil=\skip56
+\algocf@capbox=\box32
+\algocf@lcaptionbox=\skip57
+\algoheightruledefault=\skip58
+\algoheightrule=\skip59
+\algotitleheightruledefault=\skip60
+\algotitleheightrule=\skip61
+\c@algocfline=\count96
+\c@algocfproc=\count97
+\c@algocf=\count98
+\algocf@algoframe=\box33
+\algocf@algobox=\box34
 ) (D_1.aux)
 \openout1 = `D_1.aux'.
 
@@ -222,16 +263,16 @@ LaTeX Font Info:    ... okay on input line 17.
 i\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count99
-\scratchdimen=\dimen115
-\scratchbox=\box31
+\scratchdimen=\dimen120
+\scratchbox=\box35
 \nofMPsegments=\count100
 \nofMParguments=\count101
-\everyMPshowfont=\toks22
+\everyMPshowfont=\toks21
 \MPscratchCnt=\count102
-\MPscratchDim=\dimen116
+\MPscratchDim=\dimen121
 \MPnumerator=\count103
 \makeMPintoPDFobject=\count104
-\everyMPtoPDFconversion=\toks23
+\everyMPtoPDFconversion=\toks22
 )
 ("C:\Users\Sanchit Kumar\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\e
 pstopdf-base.sty"
@@ -378,35 +419,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--216
 
  []
 
-[3]
+[3] [4]
 ("C:\Users\Sanchit Kumar\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ucs\uni-32
 .def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
+Underfull \hbox (badness 10000) in paragraph at lines 309--310
 []\OT1/cmr/m/it/12 \Power Func-tions Al-ge-braic Rep-re-sen-ta-tion" $\OT1/cmtt
 /m/n/12 http : / / wmueller . com / precalculus /
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 278--279
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 []\OT1/cmr/m/it/12 "Power Func-tions" $\OT1/cmtt/m/n/12 http : / / www . biolog
 y . arizona . edu / biomath / tutorials / Power /
  []
 
-[4] (D_1.aux)
+[6] (D_1.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 3210 strings out of 492895
- 48518 string characters out of 3119998
- 133771 words of memory out of 3000000
- 7066 multiletter control sequences out of 15000+200000
+ 4109 strings out of 492895
+ 63634 string characters out of 3119998
+ 158567 words of memory out of 3000000
+ 7951 multiletter control sequences out of 15000+200000
  10625 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,25p,327b,376s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,26p,321b,405s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Sanchit Kumar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmbx12.pfb><C:/Users/Sanchit Kumar/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Sanchit Kumar/AppData/L
@@ -419,9 +460,9 @@ ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/User
 s/Sanchit Kumar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmti12.pfb><C:/Users/Sanchit Kumar/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmtt12.pfb>
-Output written on D_1.pdf (5 pages, 181806 bytes).
+Output written on D_1.pdf (7 pages, 185348 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
+ 63 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
