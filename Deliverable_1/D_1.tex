@@ -12,8 +12,6 @@
 \newcommand{\Course}{\textbf{SOEN-6011 \vspace{0.5cm} Software Engineering Processes}}
 \newcommand{\ProfessorName}{Dr. PANKAJ KAMTHAN}
 
-\graphicspath{{D:/SOEN 6011/SOEN-6011/Deliverable_1}}
-
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -271,11 +269,12 @@ where y is a real number.
 	4. ELSE \\
 	5. $\hspace{2em}$Set RESULT to 1 \\
 	6. $\hspace{2em}$Set COUNTER to 0\\
-	7. $\hspace{3em}$WHILE COUNTER $\neq$ y \\
+	7. $\hspace{2em}$WHILE COUNTER $\neq$ y \\
 	8. $\hspace{4em}$ UPDATE RESULT TO RESULT * x\\
-	9. 	PRINT RESULT \\
-	10. READ new value for x and y\\
-	11. REPEAT the algorithm for new value \\
+	9. $\hspace{4em}$ INCREMENT COUNTER by 1\\
+	10.$\hspace{2em}$ PRINT RESULT \\
+	11. READ new value for x and y\\
+	12. REPEAT the algorithm for new value \\
 	end
 	\caption{Power-Function (x,y (input set))}
 \end{algorithm}
@@ -284,28 +283,30 @@ where y is a real number.
 
 \begin{algorithm}
 	begin:\\
-	1.IF  x,y $\in -\infty$  to  +$\infty$ \\
-	2. $\hspace{2em}$ continue with processing\\
+	1. IF  x,y $\in -\infty$  to  +$\infty$ \\
+	2. $\hspace{2em}$CONTINUE PROCESSING\\
 	3. else\\
-	4. $\hspace{2em}$ print error and take new input \\
+	4. $\hspace{2em}$RAISE EXCEPTION \\
 	end
 	\caption{verifyInputIsRealNumber(x,y)}
 \end{algorithm}
 
 
+\setcounter{algocf}{0}
 
 \subsection{Solution 2}
 \begin{algorithm}[H]
 	begin: \\
 	1. verifyInputIsRealNumber(x,y)\\
-	2. verifySpecialCases(x,y)
-	3. $\hspace{2em}$Set RESULT to 1 \\
-	4. $\hspace{2em}$Set COUNTER to 0\\
-	5. $\hspace{3em}$WHILE COUNTER $\neq$ y \\
-	6. $\hspace{4em}$ UPDATE RESULT TO RESULT * x\\
-	7. PRINT RESULT \\
-	8. READ new value for x and y\\
-	9. REPEAT the algorithm for new value \\
+	2. verifySpecialCases(x,y) \\
+	3. Set RESULT to 1 \\
+	4. Set COUNTER to 0\\
+	5. WHILE COUNTER $\neq$ y \\
+	6. $\hspace{2em}$ UPDATE RESULT TO RESULT * x\\
+	7. $\hspace{2em}$ INCREMENT COUNTER by 1\\
+	8. PRINT RESULT \\
+	9. READ new value for x and y\\
+	10. REPEAT the algorithm for new value \\
 	end
 	\caption{Power-Function (x,y (input set))}
 \end{algorithm}
@@ -316,10 +317,10 @@ where y is a real number.
 	begin:\\
 	1. IF x is 0 AND y is 0 \\
 	2. $\hspace{2em}$RAISE EXCEPTION \\
-	3. ELSE IF x is 0 AND y $\le$ 0 \\
+	3. ELSE IF x is 0 AND y $<$ 0 \\
 	4. $\hspace{2em}$RAISE EXCEPTION \\
-	5. ELSE
-	6. $\hspace{2em}$CONTINUE PROCESSING 
+	5. ELSE \\
+	6. $\hspace{2em}$CONTINUE PROCESSING \\
 	end
 	\caption{verifySpecialCases(x,y)}
 \end{algorithm}
