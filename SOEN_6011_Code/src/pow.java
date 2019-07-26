@@ -1,4 +1,7 @@
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.math.RoundingMode;
 
 public class pow {
@@ -9,9 +12,8 @@ public class pow {
     BigDecimal log10 = new BigDecimal("2.302585092994045684018");
     BigDecimal signToMultiply;
     int maxIterations = 10000;
-    int scale = 200;
+    int scale = 100; //Default scale to be used.
     int finalScale; //This is not fixed and changes as per input.
-    Boolean isEven = false;
 
 
     /**
@@ -77,7 +79,8 @@ public class pow {
     public BigDecimal getSignToMultiply(BigDecimal x, BigDecimal y)
     {
         BigDecimal signToReturn = BigDecimal.ONE;
-        if( (x.compareTo(BigDecimal.ZERO) == -1) & (!(isEven)) )
+        Boolean ifIntEven = y.setScale(0, RoundingMode.HALF_UP).toBigIntegerExact().mod(new BigInteger("2")).equals(BigInteger.ZERO);
+        if( (x.signum() < 0) & (y.stripTrailingZeros().scale() <= 0) & (!ifIntEven))
         {
             this.x = x.negate();
             return signToReturn.negate();
@@ -123,7 +126,7 @@ public class pow {
             result = result.add(xRaisedToPowerN.divide(factVal, this.scale, RoundingMode.HALF_UP));
             i = i.add(BigDecimal.ONE);
         }
-        BigDecimal tmp = result.setScale(this.finalScale, RoundingMode.HALF_UP);
+        BigDecimal tmp = result.setScale(this.scale, RoundingMode.HALF_UP);
         return  tmp.stripTrailingZeros() ;
     }
 
@@ -176,7 +179,11 @@ public class pow {
     public BigDecimal numSignificantDigits(BigDecimal val)
     {
         val = val.stripTrailingZeros();
-        return new BigDecimal(val.precision() - val.scale());
+        BigDecimal significantDigits = new BigDecimal(val.precision() - val.scale());
+        if(significantDigits.signum() <0 )
+            return BigDecimal.ZERO;
+        else
+            return significantDigits;
     }
 
     /**

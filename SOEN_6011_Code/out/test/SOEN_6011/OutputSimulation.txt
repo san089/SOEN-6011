@@ -1,0 +1,12 @@
+___________________________POWER FUNCTION___________________________
+====================================================================
+Enter the base value : Enter the exponent value :
+Error : Value not defined for given input.
+//*******
+Details : This Error occurs in 3 cases.
+Case 1 : 0 raised to power 0.
+Case 2 : 0 raised to power of negative number.
+Case 3 : If x^y, when x is negative and y = a/b and b is even.
+//*******
+
+Press n to exit, any other key to continue : Thank you!!

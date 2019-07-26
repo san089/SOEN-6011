@@ -19,21 +19,21 @@
  * This file is the entry point for this project.
  */
 
-
-import jdk.nashorn.internal.runtime.Undefined;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.math.BigDecimal;
 
 
+/**
+ * This class controls the program execution.
+ */
 public class Main  {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         char controllerChar = 'y';
         while(true) {
             try {
-                System.out.println("                            POWER FUNCTION                               ");
+                System.out.println("___________________________POWER FUNCTION___________________________");
                 System.out.println("====================================================================");
                 System.out.print("Enter the base value : ");
                 BigDecimal x = sc.nextBigDecimal();
@@ -64,7 +64,7 @@ public class Main  {
                 System.out.println("\nError : Value not defined for given input.");
                 System.out.println("//*******\nDetails : This Error occurs in 3 cases.");
                 System.out.println("Case 1 : 0 raised to power 0.\nCase 2 : 0 raised to power of negative number.");
-                System.out.println("Details : If x^y, when x is negative and y = a/b and b is even.\n//*******");
+                System.out.println("Case 3 : If x^y, when x is negative and y = a/b and b is even.\n//*******");
             }
             catch (Exception e){
                 System.out.println("\nError : Some exception occured.");
@@ -83,6 +83,16 @@ public class Main  {
     }//end of main method
 
 
+    /**
+     * This method checks for special cases.
+     * There are 3 special cases to handle for which the value of power function is not defined.
+     * Case 1 : 0 raised to power 0.
+     * Case 2 : 0 raised to power of negative number.
+     * Case 3 : If x^y, when x is negative and y = a/b and b is even.
+     * @param x
+     * @param y
+     * @return
+     */
     public static boolean isSpecialCasesPassed(BigDecimal x, BigDecimal y)
     {
         if(x.equals(BigDecimal.ZERO) & (y.signum() <= 0))
@@ -109,6 +119,11 @@ class ValueNotDefined extends Exception{
 }
 
 
+/**
+ * This class is used to handle the special case number 3. See above for more details.
+ * The exponent if decimal can be represented as exponent = a/b. If b is even number then the value of power function is undefined.
+ * The method isFractionDenominatorEven() return true if b is even, false otherwise.
+ */
 class FractionHandling
 {
     double Exponent;
@@ -129,6 +144,10 @@ class FractionHandling
         this.lowestNumerator = (b / gcm);
 
     }
+
+    /**
+     * @return true if the denominator is even, false otherwise.
+     */
     public boolean isFractionDenominatorEven()
     {
         decimalToFraction(this.Exponent);
@@ -139,6 +158,10 @@ class FractionHandling
             return false;
     }
 
+    /**
+     * This method converts decimal to fraction.
+     * @param decimal Input decimal number.
+     */
     public void decimalToFraction(double decimal) {
         String stringNumber = String.valueOf(decimal);
         int numberDigitsDecimals = stringNumber.length() - 1 - stringNumber.indexOf('.');
@@ -154,6 +177,11 @@ class FractionHandling
         this.denominator = denominator / greatestCommonFactor;
     }
 
+    /**
+     * @param num Number1
+     * @param denom Number2
+     * @return The Greatest common factor of the two number input.
+     */
     public int greatestCommonFactor(int num, int denom) {
         if (denom == 0) {
             return num;

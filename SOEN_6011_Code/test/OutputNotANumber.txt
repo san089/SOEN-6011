@@ -1,0 +1,12 @@
+___________________________POWERFUNCTION___________________________
+====================================================================
+Enterthebasevalue:
+Error:Inputmismatchexceptionoccured.
+Pressntoexit,anyotherkeytocontinue:
+====================================================================
+___________________________POWERFUNCTION___________________________
+====================================================================
+Enterthebasevalue:
+Error:Inputmismatchexceptionoccured.
+Pressntoexit,anyotherkeytocontinue:
+Thankyou!!

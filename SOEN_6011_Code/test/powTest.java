@@ -121,7 +121,7 @@ class powTest {
         x = new BigDecimal("312.221");
         y = new BigDecimal("3.2412");
         pObjTest = new pow(x, y);
-        expected = new BigDecimal("121632768.5740190358955239148827278024969182021483763874856958039298772445638875460567957221728830584154337975");
+        expected = new BigDecimal("121632768.5740190358955239148827278024969182021483763874856958039298772445638875460567957221728830584547224542");
         actual = pObjTest.getPowResult();
         assertEquals(expected, actual);
 
@@ -134,13 +134,42 @@ class powTest {
         BigDecimal x = new BigDecimal("1212121212");
         BigDecimal y = new BigDecimal("1212");
         pow pObjTest = new pow(x, y, 100);
-        BigDecimal expected = new BigDecimal("10594855269910269859662775030153844150266815456395262367695363090394925790910514850786900626730275279887807326250135454640166897436415180484163554956346218505248164107431943564799724435369631009557620057907689556561192430106470515861885859481908440852024026499327883582772507407109");
+        BigDecimal expected = new BigDecimal("10594855269910269859662775030153844150266815456395262367695363090394925790910514850786900626730275269711646580833661431906927732982471590881591805448464034479928311857616454709020873227610485729819258933747012816241910884543476950912520859950889002596886648667113916898250459796375");
         BigDecimal actual = pObjTest.getPowResult();
         assertEquals(expected, actual);
     }
 
     @Test
     void getExponent() {
+        BigDecimal x;
+        BigDecimal expected;
+        BigDecimal actual;
+        //This method is to get value of e^x
+
+        //Test case 1: When x is positive integer.
+        x = new BigDecimal("34");
+        expected = new BigDecimal("583461742527454.8814029027346103910190036592389411081057829421204316676742119505811471038583648840578915946798961083");
+        actual = pDummyObjTest.getExponent(x);
+        assertEquals(expected, actual);
+
+
+        //Test case 2: When x is positive fraction.
+        x = new BigDecimal("3.34");
+        expected = new BigDecimal("28.2191267054086129265611051165996075258360161913169324678356545327177957994504014839685819866553057841");
+        actual = pDummyObjTest.getExponent(x);
+        assertEquals(expected, actual);
+
+        //Test case 3: When x is negative integer.
+        x = new BigDecimal("-3");
+        expected = new BigDecimal("0.0497870683678639429793424156500617766316995921884232155676277276060606677301995501540542442366333447");
+        actual = pDummyObjTest.getExponent(x);
+        assertEquals(expected, actual);
+
+        //Test case 4: When x is negative fraction.
+        x = new BigDecimal("-2.5");
+        expected = new BigDecimal("0.082084998623898795169528674467159807837804121015436648845758410515224756880410971309751571521236466");
+        actual = pDummyObjTest.getExponent(x);
+        assertEquals(expected, actual);
     }
 
     @Test()
@@ -156,9 +185,15 @@ class powTest {
         actual = pDummyObjTest.getLn(val).setScale(10 , RoundingMode.HALF_UP);
         assertEquals(expected, actual);
 
-        //Test Case 1: If val is a very big number. Check for timeout.
+        //Test Case 2: If val is a very big number. Check for timeout.
         val = new BigDecimal("1212121212121212121212121212121212121212");
         expected = new BigDecimal("89.9931905194");
+        actual = pDummyObjTest.getLn(val).setScale(10 , RoundingMode.HALF_UP);
+        assertEquals(expected, actual);
+
+        //Test Case 3: If the val is a fractional number.
+        val = new BigDecimal("0.0232");
+        expected = new BigDecimal("-3.7636030003");
         actual = pDummyObjTest.getLn(val).setScale(10 , RoundingMode.HALF_UP);
         assertEquals(expected, actual);
     }
@@ -179,7 +214,7 @@ class powTest {
 
 
         //Test 2: The input is floating number with no significant digits.
-        param1 = new BigDecimal("0.1212");
+        param1 = new BigDecimal("0.01212");
         param2 = BigDecimal.ZERO;
         expected = param1;
         actual = pDummyObjTest.getSmallerValue(param1, param2);
@@ -200,7 +235,7 @@ class powTest {
         assertEquals(expected, actual);
 
         //Test Case 2 : When there are 0 significant digits.
-        param1 = new BigDecimal("0.123000");
+        param1 = new BigDecimal("0.00123000");
         expected = BigDecimal.ZERO;
         actual = pDummyObjTest.numSignificantDigits(param1);
         assertEquals(expected, actual);
