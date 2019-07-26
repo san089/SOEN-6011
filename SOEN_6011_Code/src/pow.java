@@ -26,6 +26,20 @@ public class pow {
         this.finalScale = setFinalScale(this.x, this.y);
     }
 
+    /**
+     * Overloaded constructor. This is useful if user want to optimize by setting number of iterations.
+     * @param x
+     * @param y
+     * @param maxIters
+     */
+    public pow(BigDecimal x, BigDecimal y, int maxIters) {
+        this.x = x;
+        this.y = y;
+        this.maxIterations = maxIters;
+        this.signToMultiply = getSignToMultiply(this.x, this.y);
+        this.finalScale = setFinalScale(this.x, this.y);
+    }
+
 
 
     /**
@@ -36,17 +50,20 @@ public class pow {
      */
     public int setFinalScale(BigDecimal x, BigDecimal y)
     {
+        x = x.stripTrailingZeros();
+        y = y.stripTrailingZeros();
         if((x.scale() <= 0) & (y.scale() <= 0)) {
-            return 0;
+            if(y.signum() < 0 ) {return numSignificantDigits(x).intValueExact() * y.negate().intValueExact() ; }
+            else { return 0; }
         }
         else
         {
-            if(2*(x.scale() + y.scale()) < 8)
+            if((2*(x.scale() + y.scale())) < 8)
             {
-                return 8;
+                return Math.max(x.scale() * y.setScale(0, RoundingMode.HALF_UP).scale(), 8);
             }
             else
-                return 2*(x.scale() + y.scale()) ;
+                return 100;
         }
     }
 
@@ -78,11 +95,11 @@ public class pow {
         BigDecimal answer;
         BigDecimal logValue = getLn(this.x);
         BigDecimal exponentOfE = this.y.multiply(logValue);
-        System.out.println("Log value calculated is : " + logValue);
-        System.out.println("Value of Exponent of E : " + exponentOfE);
+        //System.out.println("Log value calculated is : " + logValue);
+        //System.out.println("Value of Exponent of E : " + exponentOfE);
 
         answer = getExponent(exponentOfE).multiply(signToMultiply).setScale(this.finalScale , RoundingMode.HALF_UP);
-        return answer;
+        return answer.stripTrailingZeros();
     }
 
 
@@ -106,7 +123,7 @@ public class pow {
             result = result.add(xRaisedToPowerN.divide(factVal, this.scale, RoundingMode.HALF_UP));
             i = i.add(BigDecimal.ONE);
         }
-        BigDecimal tmp = new BigDecimal(String.format("%.8f", result));
+        BigDecimal tmp = result.setScale(this.finalScale, RoundingMode.HALF_UP);
         return  tmp.stripTrailingZeros() ;
     }
 
@@ -148,7 +165,7 @@ public class pow {
      */
     public BigDecimal getSmallerValue(BigDecimal temp, BigDecimal digit_count)
     {
-        return temp.divide( getPower(BigDecimal.TEN, digit_count) , this.scale, RoundingMode.HALF_UP);
+        return temp.divide( getPower(BigDecimal.TEN, digit_count) , this.scale, RoundingMode.HALF_UP).stripTrailingZeros();
     }
 
     /**
