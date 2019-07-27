@@ -35,7 +35,7 @@ class powTest {
         x = new BigDecimal("123.523");
         y = new BigDecimal("3");
         pObjTest = new pow(x, y);
-        expected = 8;
+        expected = 100;
         actual = pObjTest.setFinalScale(x, y);
         assertEquals(expected, actual);
 
@@ -43,7 +43,7 @@ class powTest {
         x = new BigDecimal("123");
         y = new BigDecimal("3.523");
         pObjTest = new pow(x, y);
-        expected = 8;
+        expected = 100;
         actual = pObjTest.setFinalScale(x, y);
         assertEquals(expected, actual);
 
@@ -83,7 +83,7 @@ class powTest {
         x = new BigDecimal("-100");
         y = new BigDecimal("12");
         pDummyObjTest = new pow(x, y);
-        expected = BigDecimal.ONE;
+        expected = BigDecimal.ONE.negate();
         actual = pDummyObjTest.getSignToMultiply(x, y);
         assertEquals(expected, actual);
 

@@ -59,12 +59,12 @@ class Main  {
                 pow p = new pow(x, y);
                 BigDecimal answer = p.getPowResult();
 
-                System.out.println("\nResult (" + x.toPlainString() + ")^(" + y.toPlainString() + ") : ");
-                System.out.println( "With Scientific notation : " + answer.stripTrailingZeros());
-                System.out.println("Without Scientific notation : " + answer.stripTrailingZeros().toPlainString());
+                System.out.println("\nResult (" + x.toPlainString() + ")^(" + y.toPlainString() + ")  ");
+                System.out.println( "Answer : " + answer.stripTrailingZeros());
+                //System.out.println("Without Scientific notation : " + answer.stripTrailingZeros().toPlainString());
 
                 final long endTime = System.currentTimeMillis();
-                System.out.println("\nExecution time of program is : " + (endTime - startTime) / 1000F);
+                //System.out.println("\nExecution time of program is : " + (endTime - startTime) / 1000F);
 
             } catch (InputMismatchException ime) {
                 System.out.println("\nError : Input mismatch exception occurred.");

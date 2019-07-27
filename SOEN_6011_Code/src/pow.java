@@ -36,7 +36,7 @@ class pow {
     private final BigDecimal y;
     private final BigDecimal log10 = new BigDecimal("2.302585092994045684018");
     private final BigDecimal signToMultiply;
-    private int maxIterations = 10000;
+    private int maxIterations = 500;
     private final int scale = 100; //Default scale to be used.
     private final int finalScale; //This is not fixed and changes as per input.
 
@@ -88,7 +88,7 @@ class pow {
         }
         else
         {
-            if((2 * (x.scale() + y.scale())) < 8)
+            if((2 * (x.scale() + y.scale())) <= 4)
             {
                 return Math.max(x.scale() * y.setScale(0, RoundingMode.HALF_UP).scale(), 8);
             }
@@ -109,6 +109,11 @@ class pow {
         BigDecimal signToReturn = BigDecimal.ONE;
         boolean ifIntEven = y.setScale(0, RoundingMode.HALF_UP).toBigIntegerExact().mod(new BigInteger("2")).equals(BigInteger.ZERO);
         if( (x.signum() < 0) & (y.stripTrailingZeros().scale() <= 0) & (!ifIntEven))
+        {
+            this.x = x.negate();
+            return signToReturn.negate();
+        }
+        if( (x.signum() < 0) & (y.stripTrailingZeros().scale() <= 0) & (ifIntEven))
         {
             this.x = x.negate();
             return signToReturn.negate();
