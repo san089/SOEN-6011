@@ -8,11 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
- * NOTE : Input Error checking is performed in the Main class. Any unexpected input for class powTest will fail the test case.
+ * NOTE : Input Error Handling is performed in the Main class. Any unexpected input for class pow will fail the test case.
  */
 class powTest {
 
-    pow pDummyObjTest = new pow(BigDecimal.ONE, BigDecimal.ONE);
+    private pow pDummyObjTest = new pow(BigDecimal.ONE, BigDecimal.ONE);
 
     @Test
     void setFinalScale() {
@@ -75,20 +75,42 @@ class powTest {
     @Test
     void getSignToMultiply() {
         BigDecimal x,y;
-        int expected;
-        int actual;
+        BigDecimal expected;
+        BigDecimal actual;
 
 
         //Test Case 1: If x is negative and y is even
+        x = new BigDecimal("-100");
+        y = new BigDecimal("12");
+        pDummyObjTest = new pow(x, y);
+        expected = BigDecimal.ONE;
+        actual = pDummyObjTest.getSignToMultiply(x, y);
+        assertEquals(expected, actual);
+
+        //Test Case 2: If x is negative and y is odd
+        x = new BigDecimal("-100");
+        y = new BigDecimal("13");
+        pDummyObjTest = new pow(x, y);
+        expected = BigDecimal.ONE.negate();
+        actual = pDummyObjTest.getSignToMultiply(x, y);
+        assertEquals(expected, actual);
+
+        //Test Case 3: If x is positive and y is even
+        x = new BigDecimal("100");
+        y = new BigDecimal("12");
+        pDummyObjTest = new pow(x, y);
+        expected = BigDecimal.ONE;
+        actual = pDummyObjTest.getSignToMultiply(x, y);
+        assertEquals(expected, actual);
 
 
-        //Test Case 1: If x is negative and y is odd
-
-
-        //Test Case 1: If x is positive and y is even
-
-
-        //Test Case 1: If x is positive and y is odd
+        //Test Case 4: If x is positive and y is odd
+        x = new BigDecimal("100");
+        y = new BigDecimal("13");
+        pDummyObjTest = new pow(x, y);
+        expected = BigDecimal.ONE;
+        actual = pDummyObjTest.getSignToMultiply(x, y);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -126,6 +148,7 @@ class powTest {
         assertEquals(expected, actual);
 
     }
+
     @Test
     @Timeout(value = 3)
     void getPowResultTimeTest()
@@ -228,7 +251,7 @@ class powTest {
         BigDecimal expected;
         BigDecimal actual;
 
-        // Tese Case 1 : When there are more than 0 significant digits with 0 as well.
+        // Test Case 1 : When there are more than 0 significant digits with 0 as well.
         param1 = new BigDecimal("10000.000000");
         expected = new BigDecimal("5");
         actual = pDummyObjTest.numSignificantDigits(param1);

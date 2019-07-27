@@ -1,42 +1,68 @@
-import com.sun.org.apache.xpath.internal.operations.Bool;
+/*
+ * This File contains pow class which does calculate the power function value.
+ *
+ * Let f(x, y) = x^y. The function can be written as e^(y*ln(x))
+ * For calculation we need a method for calculating e^(some power) and also ln(x).
+ * The calculation is carried out in 2.
+ *
+ * Part 1 : e^(some power x)
+ * Formulae : e^x = 1 + x/1! + x^2/2! + x^3/3! ....................
+ *
+ * For ln(x) we need part 2.
+ * Part 2 : ln(x)
+ * Formulae : ln(1+x/1-x) = 2*( x + x^3/3 + x^5/5 + x^7/7 ..............)
+ *
+ * Part 2 calculation is carried out by method - getLn.
+ * Part 1 calculation is carried out by method - getExponent.
+ * Method getPowResult controls all the calculation and provides the final result.
+ *
+ *
+ * Other utility methods are used to help the calculations.
+ *
+ *
+ * For more details refer -
+ * Taylor series expansion : https://www.efunda.com/math/taylor_series/exponential.cfm
+ * Natural log Series : http://hyperphysics.phy-astr.gsu.edu/hbase/Math/lnseries.html
+ */
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 
-public class pow {
+class pow {
 
     /*----------Class variable declaration-----------------------*/
-    BigDecimal x;
-    BigDecimal y;
-    BigDecimal log10 = new BigDecimal("2.302585092994045684018");
-    BigDecimal signToMultiply;
-    int maxIterations = 10000;
-    int scale = 100; //Default scale to be used.
-    int finalScale; //This is not fixed and changes as per input.
+    private BigDecimal x;
+    private final BigDecimal y;
+    private final BigDecimal log10 = new BigDecimal("2.302585092994045684018");
+    private final BigDecimal signToMultiply;
+    private int maxIterations = 10000;
+    private final int scale = 100; //Default scale to be used.
+    private final int finalScale; //This is not fixed and changes as per input.
 
 
     /**
      * Constructor for pow class. This method instantiate the class variables.
-     * @param x The base of the power function
-     * @param y The exponent of power function
+     * @param base The base of the power function
+     * @param exponent The exponent of power function
      */
-    public pow(BigDecimal x, BigDecimal y) {
-        this.x = x;
-        this.y = y;
+    public pow(BigDecimal base, BigDecimal exponent) {
+        this.x = base;
+        this.y = exponent;
         this.signToMultiply = getSignToMultiply(this.x, this.y);
         this.finalScale = setFinalScale(this.x, this.y);
     }
 
     /**
-     * Overloaded constructor. This is useful if user want to optimize by setting number of iterations.
-     * @param x
-     * @param y
-     * @param maxIters
+     * Overloaded constructor. This is useful if user want to optimize results by setting number of iterations.
+     * NOTE : It is always suggested to use a higher value for higher accuracy.
+     * @param base The base of the power function
+     * @param exponent The exponent of power function
+     * @param maxIters Number of iterations user want to run to converge result. This is used to reduce the output time but may lack accuracy.
      */
-    public pow(BigDecimal x, BigDecimal y, int maxIters) {
-        this.x = x;
-        this.y = y;
+    public pow(BigDecimal base, BigDecimal exponent, int maxIters) {
+        this.x = base;
+        this.y = exponent;
         this.maxIterations = maxIters;
         this.signToMultiply = getSignToMultiply(this.x, this.y);
         this.finalScale = setFinalScale(this.x, this.y);
@@ -55,17 +81,19 @@ public class pow {
         x = x.stripTrailingZeros();
         y = y.stripTrailingZeros();
         if((x.scale() <= 0) & (y.scale() <= 0)) {
-            if(y.signum() < 0 ) {return numSignificantDigits(x).intValueExact() * y.negate().intValueExact() ; }
-            else { return 0; }
+            if (y.signum() < 0 ) {
+                return numSignificantDigits(x).intValueExact() * y.negate().intValueExact(); }
+            else {
+                return 0; }
         }
         else
         {
-            if((2*(x.scale() + y.scale())) < 8)
+            if((2 * (x.scale() + y.scale())) < 8)
             {
                 return Math.max(x.scale() * y.setScale(0, RoundingMode.HALF_UP).scale(), 8);
             }
-            else
-                return 100;
+            else{
+                return 100; }
         }
     }
 
@@ -79,7 +107,7 @@ public class pow {
     public BigDecimal getSignToMultiply(BigDecimal x, BigDecimal y)
     {
         BigDecimal signToReturn = BigDecimal.ONE;
-        Boolean ifIntEven = y.setScale(0, RoundingMode.HALF_UP).toBigIntegerExact().mod(new BigInteger("2")).equals(BigInteger.ZERO);
+        boolean ifIntEven = y.setScale(0, RoundingMode.HALF_UP).toBigIntegerExact().mod(new BigInteger("2")).equals(BigInteger.ZERO);
         if( (x.signum() < 0) & (y.stripTrailingZeros().scale() <= 0) & (!ifIntEven))
         {
             this.x = x.negate();
@@ -180,21 +208,21 @@ public class pow {
     {
         val = val.stripTrailingZeros();
         BigDecimal significantDigits = new BigDecimal(val.precision() - val.scale());
-        if(significantDigits.signum() <0 )
+        if(significantDigits.signum() <0 ) {
             return BigDecimal.ZERO;
-        else
-            return significantDigits;
+        }
+        else{
+            return significantDigits; }
     }
 
     /**
      * Formulae used is x = ( y - 1 ) / ( y + 1 )
      * @param y Input is the value whose log is to be calculated
-     * @return
+     * @return This method returns the value of x based on above formulae.
      */
     public BigDecimal getXValForLog(BigDecimal y)
     {
-        BigDecimal return_val = y.subtract(BigDecimal.ONE).divide(y.add(BigDecimal.ONE), this.scale, RoundingMode.HALF_UP);
-        return return_val;
+        return y.subtract(BigDecimal.ONE).divide(y.add(BigDecimal.ONE), this.scale, RoundingMode.HALF_UP);
     }
 
 
@@ -209,7 +237,7 @@ public class pow {
         if(power.intValueExact() == 0)
             return BigDecimal.ONE;
         BigDecimal result = number;
-        for(int i=1;i<power.intValueExact();i++)
+        for(int i = 1 ; i < power.intValueExact() ; i++)
         {
             result = result.multiply(number);
         }

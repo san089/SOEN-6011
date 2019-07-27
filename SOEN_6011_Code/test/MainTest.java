@@ -1,10 +1,6 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Timeout;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,7 +34,7 @@ class MainTest {
 
 
 
-    @Test //Checking for the case 0 raised to neagtive power.
+    @Test //Checking for the case 0 raised to negative power.
     void ZeroRaisedToNegative() {
 
         try {
@@ -123,7 +119,7 @@ class MainTest {
      * @param input Input String
      * @return String after removing white spaces
      */
-    public String removeWhiteSpaces(String input) {
+    String removeWhiteSpaces(String input) {
         return input.replaceAll("\\s+", "");
     }
 }
