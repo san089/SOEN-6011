@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.8)  29 JUL 2019 17:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.8)  29 JUL 2019 18:52
 entering extended mode
 **./D_2.tex
 (D_2.tex
@@ -208,8 +208,7 @@ Package: relsize 2013/03/29 ver 4.1
 \c@algocf=\count98
 \algocf@algoframe=\box33
 \algocf@algobox=\box34
-)
-No file D_2.aux.
+) (D_2.aux)
 \openout1 = `D_2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -224,6 +223,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -331,21 +331,11 @@ G,.JBIG2,.JB2,.eps]
 s.def"
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-
-LaTeX Warning: File `University_logo.jpg' not found on input line 27.
-
-
-! Package pdftex.def Error: File `University_logo.jpg' not found: using draft s
-etting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.27 ...udegraphics[scale=.1]{University_logo.jpg}
-                                                  \\[1cm]
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<University_logo.jpg, id=1, 1724.4425pt x 530.98375pt>
+File: University_logo.jpg Graphic file (type jpg)
+<use University_logo.jpg>
+Package pdftex.def Info: University_logo.jpg  used on input line 27.
+(pdftex.def)             Requested size: 172.45435pt x 53.10147pt.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
@@ -353,19 +343,39 @@ LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 
 [1
 
-{C:/Users/Sanchit Kumar/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
-! Emergency stop.
-<*> ./D_2.tex
-             
-*** (job aborted, no legal \end found)
+{C:/Users/Sanchit Kumar/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./U
+niversity_logo.jpg>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 73.
 
- 
+("C:\Users\Sanchit Kumar\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscm
+r.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
+ [1] [2] [3] (D_2.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3783 strings out of 492895
- 59452 string characters out of 3119998
- 153541 words of memory out of 3000000
- 7645 multiletter control sequences out of 15000+200000
- 7533 words of font info for 27 fonts, out of 3000000 for 9000
+ 3808 strings out of 492895
+ 60008 string characters out of 3119998
+ 154541 words of memory out of 3000000
+ 7664 multiletter control sequences out of 15000+200000
+ 7928 words of font info for 28 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,4n,25p,321b,174s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 41i,5n,25p,327b,174s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Sanchit Kumar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmbx12.pfb><C:/Users/Sanchit Kumar/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Sanchit Kumar/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/S
+anchit Kumar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr12.pfb><C:/Users/Sanchit Kumar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb>
+Output written on D_2.pdf (4 pages, 138583 bytes).
+PDF statistics:
+ 36 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+
