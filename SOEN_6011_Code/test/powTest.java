@@ -15,64 +15,6 @@ class powTest {
     private pow pDummyObjTest = new pow(BigDecimal.ONE, BigDecimal.ONE);
 
     @Test
-    void setFinalScale() {
-        pow pObjTest;
-        BigDecimal x,y;
-        int expected;
-        int actual;
-
-
-        //Test Case 1: If both x and y are integers
-        x = new BigDecimal("1000");
-        y = new BigDecimal("3");
-        pObjTest = new pow(x, y);
-        expected = 0;
-        actual = pObjTest.setFinalScale(x, y);
-        assertEquals(expected, actual);
-
-
-        //Test Case 2: If x is fractional and y is integer.
-        x = new BigDecimal("123.523");
-        y = new BigDecimal("3");
-        pObjTest = new pow(x, y);
-        expected = 100;
-        actual = pObjTest.setFinalScale(x, y);
-        assertEquals(expected, actual);
-
-        //Test Case 3: If x is integer and y is fractional.
-        x = new BigDecimal("123");
-        y = new BigDecimal("3.523");
-        pObjTest = new pow(x, y);
-        expected = 100;
-        actual = pObjTest.setFinalScale(x, y);
-        assertEquals(expected, actual);
-
-        //Test Case 4: If both x and y are fractional.
-        x = new BigDecimal("123.523");
-        y = new BigDecimal("3.523");
-        pObjTest = new pow(x, y);
-        expected = 100;
-        actual = pObjTest.setFinalScale(x, y);
-        assertEquals(expected, actual);
-
-        //Test Case 5: If both are integer but with trailing zeros.
-        x = new BigDecimal("123.000");
-        y = new BigDecimal("3.0000");
-        pObjTest = new pow(x, y);
-        expected = 0;
-        actual = pObjTest.setFinalScale(x, y);
-        assertEquals(expected, actual);
-
-        //Test Case 6: If both are fractional with large fractional values.
-        x = new BigDecimal("123.2342343363464756868242353645768465363");
-        y = new BigDecimal("34.53236478632453745866964633");
-        pObjTest = new pow(x, y);
-        expected = 100;
-        actual = pObjTest.setFinalScale(x, y);
-        assertEquals(expected, actual);
-    }
-
-    @Test
     void getSignToMultiply() {
         BigDecimal x,y;
         BigDecimal expected;
@@ -119,14 +61,14 @@ class powTest {
         //This class does no error checking. So, incorrect input will fail the test case.
         pow pObjTest;
         BigDecimal x,y;
-        BigDecimal expected;
-        BigDecimal actual;
+        String expected;
+        String actual;
 
         //Test Case 1 : When x,y is positive Integer.
         x = new BigDecimal("312");
         y = new BigDecimal("3");
         pObjTest = new pow(x, y);
-        expected = new BigDecimal("30371328");
+        expected = "3.0371328E7";
         actual = pObjTest.getPowResult();
         assertEquals(expected, actual);
 
@@ -134,7 +76,7 @@ class powTest {
         x = new BigDecimal("-32");
         y = new BigDecimal("-3");
         pObjTest = new pow(x, y);
-        expected = new BigDecimal("-0.000031");
+        expected = "-3.05175781E-5";
         actual = pObjTest.getPowResult();
         assertEquals(expected, actual);
 
@@ -143,7 +85,7 @@ class powTest {
         x = new BigDecimal("312.221");
         y = new BigDecimal("3.2412");
         pObjTest = new pow(x, y);
-        expected = new BigDecimal("121632768.5740190358955239148827278024969182021483763874856958039298772445638875460567957221728830584547224542");
+        expected = "1.21632769E8";
         actual = pObjTest.getPowResult();
         assertEquals(expected, actual);
 
@@ -154,11 +96,11 @@ class powTest {
     void getPowResultTimeTest()
     {
         // Test Case 1 : When x,y and large numbers. Base 10 digits.
-        BigDecimal x = new BigDecimal("1212121212");
-        BigDecimal y = new BigDecimal("1212");
-        pow pObjTest = new pow(x, y, 100);
-        BigDecimal expected = new BigDecimal("10594855269910269859662775030153844150266815456395262367695363090394925790910514850786900626730275269711646580833661431906927732982471590881591805448464034479928311857616454709020873227610485729819258933747012816241910884543476950912520859950889002596886648667113916898250459796375");
-        BigDecimal actual = pObjTest.getPowResult();
+        BigDecimal x = new BigDecimal("12121212121212");
+        BigDecimal y = new BigDecimal("12");
+        pow pObjTest = new pow(x, y, 200);
+        String expected = "1.00589493E157";
+        String actual = pObjTest.getPowResult();
         assertEquals(expected, actual);
     }
 

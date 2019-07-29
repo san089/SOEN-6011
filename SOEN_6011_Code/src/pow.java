@@ -28,6 +28,7 @@
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 class pow {
 
@@ -36,11 +37,9 @@ class pow {
     private final BigDecimal y;
     private final BigDecimal log10 = new BigDecimal("2.302585092994045684018");
     private final BigDecimal signToMultiply;
-    private int maxIterations = 500;
+    private int maxIterations;
     private final int scale = 100; //Default scale to be used.
-    private final int finalScale; //This is not fixed and changes as per input.
-
-
+    private final DecimalFormat df = new DecimalFormat("#.########E0");
     /**
      * Constructor for pow class. This method instantiate the class variables.
      * @param base The base of the power function
@@ -50,7 +49,7 @@ class pow {
         this.x = base;
         this.y = exponent;
         this.signToMultiply = getSignToMultiply(this.x, this.y);
-        this.finalScale = setFinalScale(this.x, this.y);
+        this.maxIterations = this.x.scale() > 2 ? 1000000 : 10000;
     }
 
     /**
@@ -65,39 +64,7 @@ class pow {
         this.y = exponent;
         this.maxIterations = maxIters;
         this.signToMultiply = getSignToMultiply(this.x, this.y);
-        this.finalScale = setFinalScale(this.x, this.y);
     }
-
-
-
-    /**
-     * This method takes base and exponent and adjust the scale for final answer.
-     * @param x The base value x
-     * @param y The exponent value y
-     * @return The number of scale to be maintained for the final answer
-     */
-    public int setFinalScale(BigDecimal x, BigDecimal y)
-    {
-        x = x.stripTrailingZeros();
-        y = y.stripTrailingZeros();
-        if((x.scale() <= 0) & (y.scale() <= 0)) {
-            if (y.signum() < 0 ) {
-                return numSignificantDigits(x).intValueExact() * y.negate().intValueExact(); }
-            else {
-                return 0; }
-        }
-        else
-        {
-            if((2 * (x.scale() + y.scale())) <= 4)
-            {
-                return Math.max(x.scale() * y.setScale(0, RoundingMode.HALF_UP).scale(), 8);
-            }
-            else{
-                return 100; }
-        }
-    }
-
-
 
     /**
      * This method adjusts the + or - sign based on the base and exponent
@@ -126,16 +93,13 @@ class pow {
      * This method controls the calculation and does return the final result for x^y.
      * @return Return the result of x raised to power y.
      */
-    public BigDecimal getPowResult()
+    public String getPowResult()
     {
         BigDecimal answer;
         BigDecimal logValue = getLn(this.x);
         BigDecimal exponentOfE = this.y.multiply(logValue);
-        //System.out.println("Log value calculated is : " + logValue);
-        //System.out.println("Value of Exponent of E : " + exponentOfE);
-
-        answer = getExponent(exponentOfE).multiply(signToMultiply).setScale(this.finalScale , RoundingMode.HALF_UP);
-        return answer.stripTrailingZeros();
+        answer = getExponent(exponentOfE).multiply(signToMultiply);
+        return df.format(answer);
     }
 
 
@@ -151,7 +115,7 @@ class pow {
 
         BigDecimal xRaisedToPowerN = power_val;
         BigDecimal factVal = BigDecimal.ONE;
-        for( ;i.intValueExact() < this.maxIterations; )
+        for( ;i.intValueExact() < 3000; )
         {
             xRaisedToPowerN = xRaisedToPowerN.multiply(power_val).setScale(this.scale, RoundingMode.HALF_UP);
             factVal = factVal.multiply(i).setScale(this.scale, RoundingMode.HALF_UP);
@@ -162,7 +126,6 @@ class pow {
         BigDecimal tmp = result.setScale(this.scale, RoundingMode.HALF_UP);
         return  tmp.stripTrailingZeros() ;
     }
-
 
 
     /**
