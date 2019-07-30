@@ -34,6 +34,7 @@
 \HRule \\[0.4cm]
 { \huge \bfseries SCIENTIFIC CALCULATOR \\ [5mm]  \ProjectName}\\[0.4cm] 
 {\large \textbf{DELIVERABLE 2 (D2)} } \\ [0.2cm] 
+{\large \textbf{Problem 4 \& 6} } \\ [0.2cm]
 {\large \textbf{GitHub : https://github.com/san089/SOEN-6011}}	
 \HRule \\[1.5cm]
 
@@ -41,7 +42,7 @@
 %---------
 %	TAIL SECTION
 %---------
-\vspace{5cm}
+\vspace{7cm}
 \Large \emph{\textbf{Author: \Author}}\\
 {\large \today}\\[2cm]
 
@@ -65,17 +66,25 @@
 
 
 \subsection{Description}
-IntelliJ IDEA 2019.2 has a build-in debugger which provides a debugger UI with views for frames, variables and watches. It also provides the user the ability to run multiple debuggin sessions simultaneously. Also, user can make use of customizable break point properties such as conditions, pass count, and so on. 
+IntelliJ IDEA 2019.2 has a build-in debugger which provides a debugger UI with views for frames, variables and watches. It also provides the user with the ability to run multiple debugging sessions simultaneously. Also, the user can make use of customizable breakpoint properties such as conditions, pass count, and so on. 
 
 \subsection{Advantages}
 Below are some advantages:
 \begin{itemize}
 	\item Ability to run multiple debugging sessions simultaneously.
-	\item Suspend code execution when a field is accessed for read or write.
-	\item Evaluate an expression during debugging by adding watches.
+	\item Suspend code execution when a field is accessed for reading or writing.
+	\item Does not crash unlike eclipse debugger and its easier to maintain debug profiles.
+	\item Efficient as compared to other debuggers available.
+	\item The ability of remote debugs in which we can debug an application running on a standalone server.
 \end{itemize}
 
 \subsection{Disadvantages}
+\begin{itemize}
+	\item Debugging UI is less user-friendly as compared to other debuggers.
+	\item No support for overhead statistics for code inspection.
+	\item Faced issues when debugger fails to starts.
+\end{itemize}
+
 
 
 \newpage
@@ -84,14 +93,29 @@ Below are some advantages:
 %----------------------------------------------------------------------------------------
 
 \section{\large Source Code Quality Checker}
-\textbf{Checkstyle}
+\textbf{the tool used: Checkstyle Version - 8.23}
 
 \subsection{Description}
-
+Checkstyle is a static code analysis tool for checking Java source code for adherence to a Code Standard or set of validation rules. It provides features such as finding class design pattern and modern design problems. The latest version of Checkstyle is 8.23, with new added rules and checks such as InvalidJavaDoc check.
 
 \subsection{Advantages}
+\begin{itemize}
+	\item Ability to set up custom rules using configuration files.
+	\item Wide range of rules provided by default configuration files.
+	\item Portability - you can use checkstyle for various IDE's such as Eclipse, IntelliJ.
+	\item Easier to integrate with external tools since it was designed as a standalone framework.
+	\item Provides real-time and on-demand scanning options.
+\end{itemize}
 
 \subsection{Disadvantages}
+\begin{itemize}
+	\item Only able to analyze java code that is written with ASCII characters only, no support for UTF-8.
+	\item Code should be compilable to get valid violations.
+	\item Cannot determine the full inheritance hierarchy type.
+	\item Cannot determine the type of expression.
+	\item Cannot implement some of the code inspection features such as Exception class inherited from java.lang.Exception class.
+	
+\end{itemize}
 
 
 
@@ -99,17 +123,33 @@ Below are some advantages:
 %----------------------------------------------------------------------------------------
 %	NEW PAGE START
 %----------------------------------------------------------------------------------------
-\section{\large Achieving Quality}
+\section{\large Achieving Code Quality}
 
 \subsection{Correctness}
-
+\begin{itemize}
+	\item Mapping the requirements to the modules and test cases to make sure requirements are covered.
+	\item Written requirement specific test cases to make sure requirements are covered and tested.
+\end{itemize}
 
 \subsection{Efficiency}
+\begin{itemize}
+	\item The significant amount of calculation time in my program is for the calculation of log. To make the calculation faster I represent the number x as $x\times10^y$. By using such notations for the number, the calculation can be made efficient as the part $10^y$ can always be calculated using a faster algorithm.
+	\item Another step taken to improve efficiency is by overriding the number of iteration run by the program to converger Taylor series values. User has the flexibility to explicitly provide a number of iterations to run for the series.
+\end{itemize}
 
-\subsection{Maintainaibility}
 
+\subsection{Maintainability}
+\begin{itemize}
+	\item To make program maintainable the first thing is to improve the code readability. I used consistent indentation, proper comments, code grouping and consistent naming scheme to make the program more readable and easy for the maintainer to understand. 
+	\item I have written test cases that are automated and modular. Automated unit test cases help the maintainer to easily the program module after changes are made.
+	\item Used a good software design which provides the ease to add new capabilities.	
+\end{itemize}
 
 \subsection{Usability}
-
+\begin{itemize}
+	\item I have used proper terminologies and provided appropriate error messages and sometimes the detailed explanation of the occurrence of the error to make the program more usable.
+	\item I have removed unnecessary information from Text-based Interface that may hinder the important information from the user.
+	\item Tested the code extensively to make sure the user does not run into unforeseen errors.
+\end{itemize}
 
 \end{document}
