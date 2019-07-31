@@ -1,10 +1,11 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[left=0.75in,right=0.75in,top=1.5in,bottom=1.5in,footskip=.25in]{geometry}
+\usepackage[left=0.75in,right=0.75in,top=1.5in,bottom=1in,footskip=.25in]{geometry}
 \usepackage{graphicx}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{url}
-\usepackage[ruled]{algorithm2e}
+\usepackage{pgf-pie}
+
 
 \newcommand{\Author}{Sanchit Kumar(40081187)}
 \newcommand{\ProjectName}{Function 9: Power Function}
@@ -32,10 +33,10 @@
 %--------
 	
 \HRule \\[0.4cm]
-{ \huge \bfseries SCIENTIFIC CALCULATOR \\ [5mm]  \ProjectName}\\[0.4cm] 
-{\large \textbf{DELIVERABLE 2 (D2)} } \\ [0.2cm] 
-{\large \textbf{Problem 4 \& 6} } \\ [0.2cm]
-{\large \textbf{GitHub : https://github.com/san089/SOEN-6011}}	
+{ \huge \bfseries SCIENTIFIC CALCULATOR }\\[0.4cm] 
+{\large \textbf{DELIVERABLE 3 (D3)} } \\ [0.2cm] 
+{\large \textbf{Problem 5 \& 7} } \\ [0.2cm]
+{\large \textbf{GitHub : \url{https://github.com/san089/SOEN-6011}}}	
 \HRule \\[1.5cm]
 
 
@@ -55,101 +56,265 @@
 %----------------------------------------------------------------------------------------
 %	NEW PAGE START
 %----------------------------------------------------------------------------------------
+\begin{section}{Problem 7: Testing}
 
-\section{\large DEBUGGER}
-\textbf{Options Considered for Debugger}
-\begin{enumerate}
-	\item IntelliJ IDEA 2019.2 Built-in Debugger.
-	\item Eclipse 4.6 (Eclipse Neon) Debugger.
-\end{enumerate} \vspace{0.5cm}
-\textbf{IntelliJ IDEA 2019.2 Built-in Debugger is selected for use.}
+\subsection{Project Details}
+\textbf{Below are the details about project.}
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[htp]
+	\centering
+	\caption{Module 2 - $\tan(x)$} \vspace{0.5cm} \label{tab:definition_table} 
+	\begin{tabular}{||c|c||}
+		\hline \hline 
+		\LARGE Project Name & \LARGE Scientific Calculator  \\ 
+		\hline
+		\LARGE Module Name & \LARGE $\tan(x)$  \\
+		\hline
+		\LARGE Developed By & \LARGE Anusha Keralapura Thandavamurthy \\
+		\hline
+		\LARGE Development End & \LARGE 29-July-2019 \\
+		\hline  
+		\LARGE Tested By & \LARGE Sanchit Kumar \\
+		\hline 
+		\LARGE Testing End & \LARGE 01-August-2019. \\
+		\hline \hline
+	\end{tabular}
+\end{table}
 
-
-\subsection{Description}
-IntelliJ IDEA 2019.2 has a build-in debugger which provides a debugger UI with views for frames, variables and watches. It also provides the user with the ability to run multiple debugging sessions simultaneously. Also, the user can make use of customizable breakpoint properties such as conditions, pass count, and so on. 
-
-\subsection{Advantages}
-Below are some advantages:
+\subsection{Testing Detailed Report}
+\subsubsection{$\cos(x)$ Testing Reports}
 \begin{itemize}
-	\item Ability to run multiple debugging sessions simultaneously.
-	\item Suspend code execution when a field is accessed for reading or writing.
-	\item Does not crash unlike eclipse debugger and its easier to maintain debug profiles.
-	\item Efficient as compared to other debuggers available.
-	\item The ability of remote debugs in which we can debug an application running on a standalone server.
-\end{itemize}
+	
+	\item \textbf{Test Case ID} \hspace{1.85cm} : TC1  \\
+	\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+	\textbf{DESCRIPTION }\hspace{1.15cm} : $\cos(x)$ value test. \\
+	\textbf{INPUT} \hspace{3.05cm} :  0.7853975 \\
+	\textbf{EXPECTED RESULT} \hspace{0.01cm} : 0.7071072502792262 \\
+	\textbf{ACTUAL RESULT} \hspace{0.6cm} : 0.7071072502792262 \\
+	\textbf{TEST RESULT} \hspace{1.45cm} : PASS \\
+	
+	\item \textbf{Test Case ID} \hspace{1.85cm} : TC2  \\
+	\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+	\textbf{DESCRIPTION }\hspace{1.15cm} : $\cos(x)$ value test. \\
+	\textbf{INPUT} \hspace{3.05cm} :  0 \\
+	\textbf{EXPECTED RESULT} \hspace{0.01cm} : 1 \\
+	\textbf{ACTUAL RESULT} \hspace{0.6cm} : 1 \\
+	\textbf{TEST RESULT} \hspace{1.45cm} : PASS \\	
+	
+	\item \textbf{Test Case ID} \hspace{1.85cm} : TC3  \\
+	\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+	\textbf{DESCRIPTION }\hspace{1.15cm} : $\cos(x)$ value test. \\
+	\textbf{INPUT} \hspace{3.05cm} :  3.14159 \\
+	\textbf{EXPECTED RESULT} \hspace{0.01cm} : -1.0 \\
+	\textbf{ACTUAL RESULT} \hspace{0.6cm} : -1.0000000035255 \\
+	\textbf{TEST RESULT} \hspace{1.45cm} : FAIL \\
+	
+	
+	\item \textbf{Test Case ID} \hspace{1.85cm} : TC4  \\
+	\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+	\textbf{DESCRIPTION }\hspace{1.15cm} : $\cos(x)$ value test. \\
+	\textbf{INPUT} \hspace{3.05cm} :  4.7123889 \\
+	\textbf{EXPECTED RESULT} \hspace{0.01cm} : 0 \\
+	\textbf{ACTUAL RESULT} \hspace{0.6cm} : -1.151329162868764E-5 \\
+	\textbf{TEST RESULT} \hspace{1.45cm} : FAIL \\
 
-\subsection{Disadvantages}
-\begin{itemize}
-	\item Debugging UI is less user-friendly as compared to other debuggers.
-	\item No support for overhead statistics for code inspection.
-	\item Faced issues when debugger fails to starts.
-\end{itemize}
+%------------------------------------Sin Value Test--------------------------------------------
+\subsubsection{$\sin(x)$ Testing Reports}
+	
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC5  \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\sin(x)$ value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  0.7853975 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : 0.7071072502792262 \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : 0.7071072502792262 \\
+\textbf{TEST RESULT} \hspace{1.45cm} : PASS \\
+
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC6  \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\sin(x)$ value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  0 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : 0 \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : 0 \\
+\textbf{TEST RESULT} \hspace{1.45cm} : PASS \\	
+
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC7  \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\sin(x)$ value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  3.14159 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : 0 \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : 2.65306088421985E-6 \\
+\textbf{TEST RESULT} \hspace{1.45cm} : FAIL \\
+
+
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC8  \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\sin(x)$ value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  4.7123889 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : -1 \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : -1.0000025759866482 \\
+\textbf{TEST RESULT} \hspace{1.45cm} : FAIL \\
+
+
+%------------------------------------Tan Value Test--------------------------------------------
+\subsubsection{$\tan(x)$ Testing Reports}
+
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC9  \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\tan(x)$ value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  39 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : 0.809783081231065 \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : 0.809783081231065 \\
+\textbf{TEST RESULT} \hspace{1.45cm} : PASS \\
+
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC10  \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\tan(x)$ value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  0 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : 0 \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : 0 \\
+\textbf{TEST RESULT} \hspace{1.45cm} : PASS \\	
+
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC11 \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\tan(x)$ value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  225 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : 1 \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : 0.999993366047522 \\
+\textbf{TEST RESULT} \hspace{1.45cm} : FAIL \\
+
+
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC12  \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\tan(x)$ value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  315 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : -1 \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : -1.0000092876074058 \\
+\textbf{TEST RESULT} \hspace{1.45cm} : FAIL \\
 
 
 
-\newpage
-%----------------------------------------------------------------------------------------
-%	NEW PAGE START
-%----------------------------------------------------------------------------------------
+%------------------------------------Tan Negative Value Test--------------------------------------------
+\subsubsection{$\tan(x)$ Negative Values Testing Reports}
 
-\section{\large Source Code Quality Checker}
-\textbf{the tool used: Checkstyle Version - 8.23}
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC13  \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\tan(x)$ negative value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  -64 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : -2.0502989318619114  \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : -2.0502989318619114  \\
+\textbf{TEST RESULT} \hspace{1.45cm} : PASS \\
 
-\subsection{Description}
-Checkstyle is a static code analysis tool for checking Java source code for adherence to a Code Standard or set of validation rules. It provides features such as finding class design pattern and modern design problems. The latest version of Checkstyle is 8.23, with new added rules and checks such as InvalidJavaDoc check.
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC14  \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\tan(x)$ negative value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  -45 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : -1 \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : -0.9999986732059835 \\
+\textbf{TEST RESULT} \hspace{1.45cm} : FAIL \\	
 
-\subsection{Advantages}
-\begin{itemize}
-	\item Ability to set up custom rules using configuration files.
-	\item Wide range of rules provided by default configuration files.
-	\item Portability - you can use checkstyle for various IDE's such as Eclipse, IntelliJ.
-	\item Easier to integrate with external tools since it was designed as a standalone framework.
-	\item Provides real-time and on-demand scanning options.
-\end{itemize}
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC15 \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\tan(x)$ negative value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  -180 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : 0 \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : 0 \\
+\textbf{TEST RESULT} \hspace{1.45cm} : PASS \\
 
-\subsection{Disadvantages}
-\begin{itemize}
-	\item Only able to analyze java code that is written with ASCII characters only, no support for UTF-8.
-	\item Code should be compilable to get valid violations.
-	\item Cannot determine the full inheritance hierarchy type.
-	\item Cannot determine the type of expression.
-	\item Cannot implement some of the code inspection features such as Exception class inherited from java.lang.Exception class.
+
+
+%------------------------------------Tan Decimal Value Test--------------------------------------------
+\subsubsection{$\tan(x)$ Decimal Values Testing Reports}
+
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC16  \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\tan(x)$ decimal value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  66.8 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : 2.333168462359474 \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : 2.333168462359474  \\
+\textbf{TEST RESULT} \hspace{1.45cm} : PASS \\
+
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC17  \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\tan(x)$ decimal value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  1111111111111111111111.99999999999999999 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : 0.62486935  \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : Program Not Responding \\
+\textbf{TEST RESULT} \hspace{1.45cm} : FAIL \\	
+
+\item \textbf{Test Case ID} \hspace{1.85cm} : TC18 \\
+\textbf{TYPE } \hspace{3.05cm}  : Functional\\
+\textbf{DESCRIPTION }\hspace{1.15cm} : $\tan(x)$ decimal value test. \\
+\textbf{INPUT} \hspace{3.05cm} :  89.999999 \\
+\textbf{EXPECTED RESULT} \hspace{0.01cm} : 57295779.814 \\
+\textbf{ACTUAL RESULT} \hspace{0.6cm} : 743910.253181 \\
+\textbf{TEST RESULT} \hspace{1.45cm} : FAIL \\
+
 	
 \end{itemize}
 
 
+\subsection{Test Results Summary}
+%----------------------------------------------------------------------
+%               Test Case Impact
+%----------------------------------------------------------------------
 
-\newpage
-%----------------------------------------------------------------------------------------
-%	NEW PAGE START
-%----------------------------------------------------------------------------------------
-\section{\large Achieving Code Quality}
+\begin{table}[htp]
+	\centering
+	\caption{Test Summary} \vspace{0.5cm} \label{tab:difficulty_table} 
+	\begin{tabular}{||c|c|c||}
+		\hline  \hline \textbf{Test Case ID} & \textbf{Status} & \textbf{Impact} \\
+		\hline \hline
+		TC1 & PASS & - \\ 
+		\hline
+		TC2 & PASS & - \\ 
+		\hline
+		TC3 & FAIL & Minor \\ 
+		\hline
+		TC4 & FAIL & Minor \\ 
+		\hline
+		TC5 & PASS & - \\ 
+		\hline
+		TC6 & PASS & - \\ 
+		\hline
+		TC7 & FAIL & Minor \\ 
+		\hline
+		TC8 & FAIL & Minor \\ 
+		\hline
+		TC9 & PASS & - \\ 
+		\hline
+		TC10 & PASS & - \\ 
+		\hline
+		TC11 & FAIL & Major \\ 
+		\hline
+		TC12 & FAIL & Major \\ 
+		\hline
+		TC13 & PASS & - \\ 
+		\hline
+		TC14 & FAIL & Major \\ 
+		\hline
+		TC15 & PASS & - \\ 
+		\hline
+		TC16 & PASS & - \\ 
+		\hline
+		TC17 & FAIL & Major \\ 
+		\hline
+		TC18 & FAIL & Major \\ 
+		\hline	
+	\end{tabular}
+\end{table}
 
-\subsection{Correctness}
-\begin{itemize}
-	\item Mapping the requirements to the modules and test cases to make sure requirements are covered.
-	\item Written requirement specific test cases to make sure requirements are covered and tested.
-\end{itemize}
 
-\subsection{Efficiency}
-\begin{itemize}
-	\item The significant amount of calculation time in my program is for the calculation of log. To make the calculation faster I represent the number x as $x\times10^y$. By using such notations for the number, the calculation can be made efficient as the part $10^y$ can always be calculated using a faster algorithm.
-	\item Another step taken to improve efficiency is by overriding the number of iteration run by the program to converger Taylor series values. User has the flexibility to explicitly provide a number of iterations to run for the series.
-\end{itemize}
+\subsection{Summary}
+\centering
+\begin{tikzpicture}
+\pie{60/FAIL, 40/PASS}
+\end{tikzpicture}
 
 
-\subsection{Maintainability}
-\begin{itemize}
-	\item To make program maintainable the first thing is to improve the code readability. I used consistent indentation, proper comments, code grouping and consistent naming scheme to make the program more readable and easy for the maintainer to understand. 
-	\item I have written test cases that are automated and modular. Automated unit test cases help the maintainer to easily the program module after changes are made.
-	\item Used a good software design which provides the ease to add new capabilities.	
-\end{itemize}
+\end{section}
 
-\subsection{Usability}
-\begin{itemize}
-	\item I have used proper terminologies and provided appropriate error messages and sometimes the detailed explanation of the occurrence of the error to make the program more usable.
-	\item I have removed unnecessary information from Text-based Interface that may hinder the important information from the user.
-	\item Tested the code extensively to make sure the user does not run into unforeseen errors.
-\end{itemize}
+
+
+
 
 \end{document}
