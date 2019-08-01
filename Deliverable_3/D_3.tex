@@ -1,5 +1,5 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[left=0.75in,right=0.75in,top=1.5in,bottom=1in,footskip=.25in]{geometry}
+\usepackage[left=0.75in,right=0.75in,top=1.25in,bottom=1in,footskip=.25in]{geometry}
 \usepackage{graphicx}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -58,11 +58,39 @@
 %----------------------------------------------------------------------------------------
 
 \begin{section}{Problem 5 : Source Code Review}
-	\large \textbf{Tool Used : Upsource 2019.1} \\  \vspace{0.5cm} 
-	\large \textbf{Link : \url{https://www.jetbrains.com/upsource/}}
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[htp]
+	\centering
+	\caption{Module 1 - arccos(x)} \vspace{0.5cm} \label{tab:definition_table} 
+	\begin{tabular}{||c|c||}
+		\hline \hline 
+		\LARGE Project Name & \LARGE Scientific Calculator  \\ 
+		\hline
+		\LARGE Module Name & \LARGE arccos(x)  \\
+		\hline
+		\LARGE Developed By & \LARGE Sohila Kaur \\
+		\hline
+		\LARGE Development End & \LARGE 29-July-2019 \\
+		\hline  
+		\LARGE Code Reviewed By & \LARGE Sanchit Kumar \\
+		\hline 
+		\LARGE Review End & \LARGE 01-August-2019. \\
+		\hline \hline
+	\end{tabular}
+\end{table}
 
+
+\vspace{1cm}
 
 \subsection{Tool Overview}
+
+\vspace{3mm}
+
+\large \textbf{Tool Used : Upsource 2019.1} \\  \vspace{0.5cm} 
+\large \textbf{Link : \url{https://www.jetbrains.com/upsource/}}
+
+\vspace{3mm}
+
 JetBrains Upsource is a polyglot code review tool. It offers lot of benifits to the users such as saving time on automating routine tasks, locating and fixing errors, taking advantage of intelligent support from the IDE, and increasing their overall productivity. With Upsource, teams can save significant time on locating and fixing errors, so that these hours of saved time per day are used for actual product development and company resources are allocated wisely. Developers can also automate many manual routine tasks, and get useful hints and code insights straight away, not wasting any time on switching to other tools or consulting documentation. In addition, Upsource reliably improves coding practices and eases the handling of multi-language solutions. \\ \\ 
 Upsource is built on top of IntelliJ Platform developed by JetBrains. That’s why Upsource combines code review functionality with IDE-specific capabilities, including static code analysis and code-aware navigation.
 \\
@@ -78,19 +106,15 @@ Upsource is built on top of IntelliJ Platform developed by JetBrains. That’s w
 \end{section}
 
 
-\newpage
-%----------------------------------------------------------------------------------------
-%	NEW PAGE START
-%----------------------------------------------------------------------------------------
-
+\vspace{3cm}
 
 \subsection{Approach}
-Upsource provides teams to collaborate on a common portal, but in order to access its portal team first needs to create their account. For accessing source code review reports please follow below steps to gain access to the project on portal.
+Upsource provides teams to collaborate on a common portal, but to access its portal team first needs to create their account. For accessing source code review reports please follow below steps to gain access to the project on the portal.
 \\ \\
 Below are the steps to start collaborating. 
 
 \begin{enumerate}
-	\item Create account on the given link - \url{http://desktop-j65qh2b/}.
+	\item Create an account on the given link - \url{http://desktop-j65qh2b/}.
 	\item Click Login $\rightarrow$ Sign Up $\rightarrow$ Fill your details and complete the registration.
 	\item Email "sanchitkumar013@gmail.com" to add you to the project group. 
 	\item You will be provided access to the project group and you can start collaborating.
@@ -98,7 +122,7 @@ Below are the steps to start collaborating.
 
 \begin{figure}[htp]
 	\centering
-	\includegraphics[scale=1]{Project_View.jpg}
+	\includegraphics[width=12cm,height=8cm,keepaspectratio]{Project_View.jpg}
 	\caption{Upsource Project View}
 	\label{fig:galaxy}
 \end{figure}
@@ -113,23 +137,27 @@ Below are the steps to start collaborating.
 	\item Using the ".*" form for importing modules.
 	\item Accessing static method of class via instance variable.
 	\item Unnecessary "continue" statements at the end of while loop.
+	\item Not using appropriate data type.
+	\item Unnecessary use of variables.
 \end{itemize}
+
+\vspace{1cm}
 
 \begin{figure}[htp]
 	\centering
-	\includegraphics[scale=0.5]{sample_review.jpg}
+	\includegraphics[width=16cm,height=16cm,keepaspectratio]{sample_review.jpg}
 	\caption{Upsource Code Review Sample}
 	\label{fig:galaxy}
 \end{figure}
 
 
 
-
+\newpage
 
 \begin{section}{Problem 7: Testing}
 
 \subsection{Project Details}
-\textbf{Below are the details about project.}
+\textbf{Below are the details about the project.}
 \renewcommand{\arraystretch}{1.5}
 \begin{table}[htp]
 	\centering
@@ -152,7 +180,7 @@ Below are the steps to start collaborating.
 \end{table}
 
 \subsection{Testing Detailed Report}
-\subsubsection{$\cos(x)$ Testing Reports}
+\begin{subsubsection}{$\cos(x)$ Testing Reports}
 \begin{itemize}
 	
 	\item \textbf{TEST CASE ID} \hspace{1.25cm} : TC1  \\
@@ -178,12 +206,13 @@ Below are the steps to start collaborating.
 	\textbf{EXPECTED RESULT} \hspace{0.01cm} : -1.0 \\
 	\textbf{ACTUAL RESULT} \hspace{0.6cm} : -1.0000000035255 \\
 	\textbf{TEST RESULT} \hspace{1.40cm} : FAIL \\
-	
-	
+\end{itemize}
+\end{subsubsection}	
+\vspace{1cm}	
 
 %------------------------------------Sin Value Test--------------------------------------------
-\subsubsection{$\sin(x)$ Testing Reports}
-	
+\begin{subsubsection}{$\sin(x)$ Testing Reports}
+\begin{itemize}	
 \item \textbf{TEST CASE ID} \hspace{1.25cm} : TC4  \\
 \textbf{TYPE } \hspace{3.15cm}  : Functional\\
 \textbf{DESCRIPTION }\hspace{1.25cm} : $\sin(x)$ value test. \\
@@ -217,10 +246,13 @@ Below are the steps to start collaborating.
 \textbf{ACTUAL RESULT} \hspace{0.6cm} : -0.0010335410874021851 \\
 \textbf{TEST RESULT} \hspace{1.40cm} : FAIL \\
 
+\end{itemize}
+\end{subsubsection}
+\vspace{1cm}
 
 %------------------------------------Tan Value Test--------------------------------------------
-\subsubsection{$\tan(x)$ Testing Reports}
-
+\begin{subsubsection}{$\tan(x)$ Testing Reports}
+\begin{itemize}
 \item \textbf{TEST CASE ID} \hspace{1.25cm} : TC8  \\
 \textbf{TYPE } \hspace{3.15cm}  : Functional\\
 \textbf{DESCRIPTION }\hspace{1.25cm} : $\tan(x)$ value test. \\
@@ -254,11 +286,14 @@ Below are the steps to start collaborating.
 \textbf{ACTUAL RESULT} \hspace{0.6cm} : -1.0000092876074058 \\
 \textbf{TEST RESULT} \hspace{1.40cm} : FAIL \\
 
+\end{itemize}
+\end{subsubsection}
 
+\vspace{1cm}
 
 %------------------------------------Tan Negative Value Test--------------------------------------------
-\subsubsection{$\tan(x)$ Negative Values Testing Reports}
-
+\begin{subsubsection}{$\tan(x)$ Negative Values Testing Reports}
+\begin{itemize}
 \item \textbf{TEST CASE ID} \hspace{1.25cm} : TC12  \\
 \textbf{TYPE } \hspace{3.15cm}  : Functional\\
 \textbf{DESCRIPTION }\hspace{1.25cm} : $\tan(x)$ negative value test. \\
@@ -283,11 +318,13 @@ Below are the steps to start collaborating.
 \textbf{ACTUAL RESULT} \hspace{0.6cm} : 0 \\
 \textbf{TEST RESULT} \hspace{1.40cm} : PASS \\
 
+\end{itemize}
+\end{subsubsection}
 
-
+\vspace{1cm}
 %------------------------------------Tan Decimal Value Test--------------------------------------------
-\subsubsection{$\tan(x)$ Decimal Values Testing Reports}
-
+\begin{subsubsection}{$\tan(x)$ Decimal Values Testing Reports}
+\begin{itemize}
 \item \textbf{TEST CASE ID} \hspace{1.25cm} : TC15  \\
 \textbf{TYPE } \hspace{3.15cm}  : Functional\\
 \textbf{DESCRIPTION }\hspace{1.25cm} : $\tan(x)$ decimal value test. \\
@@ -312,10 +349,11 @@ Below are the steps to start collaborating.
 \textbf{ACTUAL RESULT} \hspace{0.6cm} : 743910.253181 \\
 \textbf{TEST RESULT} \hspace{1.40cm} : FAIL \\
 
-	
 \end{itemize}
+\end{subsubsection}
 
-\newpage
+
+
 \subsection{Test Results Summary}
 %----------------------------------------------------------------------
 %               Test Case Impact
